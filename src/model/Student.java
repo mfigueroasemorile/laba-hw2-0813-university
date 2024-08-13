@@ -6,7 +6,6 @@ public class Student {
     private String lastName;
     private Major major;
     private String shift;
-    //Preguntar: cuando es recomendable usar atributos publicos?
 
     public Student(String firstName, String lastName, Major major) {
         this.firstName = firstName;
