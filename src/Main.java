@@ -7,11 +7,15 @@ public class Main {
     public static void main(String[] args) {
 
         University university = new University();
-
         university.setName("LA model.University");
         university.setLocation(new Address("Washington St", "Los Angeles, California", "55555"));
 
+
         Campus campus = new Campus("Lawyer campus");
+        List<Major> majorsList = new ArrayList<>();
+        majorsList.add(new Major("Law"));
+        majorsList.add(new Major("IT"));
+        campus.setMajors(majorsList);
 
         Employee martin = new Employee("58945948","Martin","Johnson");
 
@@ -21,6 +25,8 @@ public class Main {
 
         List<Student> studentsList = new ArrayList<>();
         campus.setEmployees(employeeList);
+
+
 
         //Assign subject to professor
         Professor professor = new Professor("88555858", "Tom", "Hanks");

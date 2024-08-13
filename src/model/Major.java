@@ -14,6 +14,10 @@ public class Major {
     public Major(){
     }
 
+    public Major(String name){
+        this.name = name;
+    }
+
     public long getId() {
         return id;
     }
