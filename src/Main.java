@@ -20,18 +20,19 @@ public class Main {
         campus.setEmployees(employeeList);
 
         List<Student> studentsList = new ArrayList<>();
-        Major itDegree = new Major();
-        itDegree.setName("IT DEGREE");
-        Student charlie = new Student("Charlie", "Charlies", itDegree);
-        studentsList.add(charlie);
         campus.setEmployees(employeeList);
 
-        Subject math = new Subject();
-
+        //Assign subject to professor
         Professor professor = new Professor("88555858", "Tom", "Hanks");
+        Subject math = new Subject("Math");
         professor.assignSubject(math);
 
-        System.out.println(campus.getName());
-        System.out.println(studentsList.get(0).getFirstName());
+
+        //Enroll student to Major
+        Major itDegree = new Major();
+
+        Student charlie = new Student("Charlie", "Charlies", itDegree);
+        itDegree.setName("IT DEGREE");
+        charlie.enrollStudent(itDegree);
     }
 }

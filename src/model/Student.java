@@ -53,4 +53,9 @@ public class Student {
     public void setShift(String shift) {
         this.shift = shift;
     }
+
+    public void enrollStudent(Major major){
+        this.major = major;
+        System.out.println("Student "+this.firstName+ " was successfully enroled to "+ major.getName());
+    }
 }

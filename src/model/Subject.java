@@ -16,6 +16,10 @@ public class Subject {
         this.hoursPerWeek = hoursPerWeek;
     }
 
+    public Subject(String name) {
+        this.name = name;
+    }
+
     public Subject(){
 
     }
