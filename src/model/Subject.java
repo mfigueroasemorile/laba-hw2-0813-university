@@ -16,6 +16,10 @@ public class Subject {
         this.hoursPerWeek = hoursPerWeek;
     }
 
+    public Subject(){
+
+    }
+
     public long getId() {
         return id;
     }

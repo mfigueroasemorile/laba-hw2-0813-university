@@ -26,6 +26,10 @@ public class Main {
         studentsList.add(charlie);
         campus.setEmployees(employeeList);
 
+        Subject math = new Subject();
+
+        Professor professor = new Professor("88555858", "Tom", "Hanks");
+        professor.assignSubject(math);
 
         System.out.println(campus.getName());
         System.out.println(studentsList.get(0).getFirstName());

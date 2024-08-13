@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Professor extends Employee{
@@ -11,6 +12,11 @@ public class Professor extends Employee{
         super(ssn, firstName, lastName);
         this.subjects = subjects;
         this.shift = shift;
+    }
+
+    public Professor(String ssn, String firstName, String lastName){
+        super(ssn, firstName,lastName);
+
     }
     public List<Subject> getSubjects() {
         return subjects;
@@ -26,5 +32,11 @@ public class Professor extends Employee{
 
     public void setShift(String shift) {
         this.shift = shift;
+    }
+
+    public void assignSubject(Subject subject){
+        List<Subject> assignedSubjects = new ArrayList<>();
+        assignedSubjects.add(subject);
+        this.subjects = assignedSubjects;
     }
 }
