@@ -1,3 +1,5 @@
+import model.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -6,7 +8,7 @@ public class Main {
 
         University university = new University();
 
-        university.setName("LA University");
+        university.setName("LA model.University");
         university.setLocation(new Address("Washington St", "Los Angeles, California", "55555"));
 
         Campus campus = new Campus("Lawyer campus");
