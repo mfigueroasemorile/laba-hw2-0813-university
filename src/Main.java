@@ -12,6 +12,7 @@ public class Main {
 
 
         Campus campus = new Campus("Lawyer campus");
+
         List<Major> majorsList = new ArrayList<>();
         majorsList.add(new Major("Law"));
         majorsList.add(new Major("IT"));
@@ -23,10 +24,14 @@ public class Main {
         employeeList.add(martin);
         campus.setEmployees(employeeList);
 
+        //Major
+        Major itDegree = new Major();
+        itDegree.setName("IT DEGREE");
+
+        //Students list
+        Student charlie = new Student("Charlie", "Charlies", itDegree);
         List<Student> studentsList = new ArrayList<>();
-        campus.setEmployees(employeeList);
-
-
+        studentsList.add(charlie);
 
         //Assign subject to professor
         Professor professor = new Professor("88555858", "Tom", "Hanks");
@@ -35,10 +40,6 @@ public class Main {
 
 
         //Enroll student to Major
-        Major itDegree = new Major();
-
-        Student charlie = new Student("Charlie", "Charlies", itDegree);
-        itDegree.setName("IT DEGREE");
         charlie.enrollStudent(itDegree);
     }
 }
