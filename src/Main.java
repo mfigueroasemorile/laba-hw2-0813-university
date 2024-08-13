@@ -24,5 +24,10 @@ public class Main {
         itDegree.setName("IT DEGREE");
         Student charlie = new Student("Charlie", "Charlies", itDegree);
         studentsList.add(charlie);
+        campus.setEmployees(employeeList);
+
+
+        System.out.println(campus.getName());
+        System.out.println(studentsList.get(0).getFirstName());
     }
 }
