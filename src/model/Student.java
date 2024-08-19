@@ -1,28 +1,19 @@
 package model;
 
-public class Student {
-    private long id;
-    private String firstName;
-    private String lastName;
+public class Student extends Human {
     private Major major;
     private String shift;
 
-    public Student(String firstName, String lastName, Major major) {
+    public Student(String ssn, String firstName, Major major) {
+        super(firstName, ssn);
         this.firstName = firstName;
-        this.lastName = lastName;
+        this.ssn = ssn;
         this.major = major;
     }
 
-    public long getId() {
-        return id;
-    }
 
     public String getFirstName() {
         return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     public Major getMajor() {
@@ -33,16 +24,8 @@ public class Student {
         return shift;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public void setMajor(Major major) {
@@ -56,5 +39,18 @@ public class Student {
     public void enrollStudent(Major major){
         this.major = major;
         System.out.println("Student "+this.firstName+ " was successfully enroled to "+ major.getName());
+    }
+
+    @Override
+    public void goToUniversity() {
+        System.out.println("Student " +this.firstName+ " is going to study");
+    }
+
+    @Override
+    public String toString(){
+        return "ssn='" + ssn + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", major='" + (major != null ? major.getName() : "No major assigned" + '\'');
     }
 }

@@ -1,18 +1,12 @@
 package model;
 
-public class Employee {
+public class Employee extends Human{
 
-
-    private String ssn;
-    private String firstName;
-    private String lastName;
-    private Address address;
     private Role role;
-
-    public Employee(String ssn, String firstName, String lastName) {
+    public Employee(String ssn, String firstName) {
+        super(ssn,firstName);
         this.ssn = ssn;
         this.firstName = firstName;
-        this.lastName = lastName;
     }
 
     public void setSsn(String ssn) {
@@ -23,18 +17,6 @@ public class Employee {
         this.firstName = firstName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
     public String getSsn() {
         return ssn;
     }
@@ -43,17 +25,25 @@ public class Employee {
         return firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
     public Role getRole() {
         return role;
     }
 
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
+    @Override
+    public void goToUniversity() {
+        System.out.println("Employee " + this.getFirstName() + " is going to university to work as a " + (this.role != null ? role.getRoleName() : "generic worker"));
+    }
+
+    @Override
+    public String toString(){
+        return
+                "ssn='" + ssn + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", role=" + (role != null ? role.getRoleName() : "No Role Assigned");
+    }
 }
+

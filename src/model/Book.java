@@ -37,4 +37,11 @@ public class Book {
         return author;
     }
 
+    @Override
+    public String toString(){
+        return  "id='" + id + '\'' +
+                ", book title='" + title  + '\'' +
+                ", author ='" + author  + '\'';
+    }
+
 }

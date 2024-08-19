@@ -8,16 +8,12 @@ public class Professor extends Employee{
     private List<Subject> subjects;
     private String shift;
 
-    public Professor(String ssn, String firstName, String lastName, List<Subject> subjects, String shift) {
-        super(ssn, firstName, lastName);
-        this.subjects = subjects;
-        this.shift = shift;
+    public Professor(String ssn, String firstName) {
+        super(ssn, firstName);
+        this.setRole(new Role("professor"));
     }
 
-    public Professor(String ssn, String firstName, String lastName){
-        super(ssn, firstName,lastName);
 
-    }
     public List<Subject> getSubjects() {
         return subjects;
     }
