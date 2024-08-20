@@ -4,6 +4,11 @@ import java.util.List;
 
 public class University {
 
+    private String name;
+    private List<Campus> campus;
+    private Address location;
+    private List<Student> students;
+    private Employee director;
     public University(String name, Address location) {
         this.name = name;
         this.location = location;
@@ -13,9 +18,7 @@ public class University {
 
     }
 
-    private String name;
-    private List<Campus> campus;
-    private Address location;
+
 
     public Address getLocation() {
         return location;

@@ -1,11 +1,15 @@
 package model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Campus {
 
     private long campusId;
     private String name;
+
+
+
     private List<Major>  majors;
     private List<Employee> employees;
 
@@ -43,6 +47,19 @@ public class Campus {
 
     public List<Employee> getEmployees() {
         return employees;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Campus campus = (Campus) object;
+        return campusId == campus.campusId && Objects.equals(name, campus.name) && Objects.equals(majors, campus.majors) && Objects.equals(employees, campus.employees);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(campusId, name, majors, employees);
     }
 
 

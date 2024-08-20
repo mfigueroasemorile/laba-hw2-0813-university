@@ -35,6 +35,9 @@ public class Main {
         //Enroll student to Major
         /*charlie.enrollStudent(itDegree);*/
 
+
+
+        /*----------------------------------------------------------*/
         //Proffesor going to work
         Professor professorJohn = new Professor("5978694", "John");
         professorJohn.goToUniversity();
@@ -60,23 +63,33 @@ public class Main {
         Book book = new Book("Harry Potter", "J.K. Rowling");
         System.out.println(book.toString());
 
+        //Employee
         Employee employee1 = new Employee("123456", "Carlos");
         Employee employee2 = new Employee("123456", "Carlos");
 
         System.out.println(employee1.equals(employee2));
         System.out.println(employee1.hashCode() + ";" + employee2.hashCode());
 
+        //Book
         Book book1 = new Book("Harry Potter", "J.K. Rowling");
         Book book2 = new Book("Harry Potter", "J.K. Rowling");
 
         System.out.println(book1.equals(book2));
         System.out.println(book1.hashCode() + ";" + book2.hashCode());
 
+        //Student
         Student student1 = new Student("8956286", "Miranda", itDegree);
         Student student2 = new Student("8956286", "Miranda", itDegree);
 
         System.out.println(student2.equals(student1));
         System.out.println(student2.hashCode() + ";" + student1.hashCode());
+
+        //Campus
+        Campus campus1 = new Campus("IT CAMPUS");
+        Campus campus2 = new Campus("IT CAMPUS");
+
+        System.out.println(campus1.equals(campus2));
+        System.out.println(campus1.hashCode() + ";" + campus2.hashCode());
 
     }
 }
