@@ -44,4 +44,27 @@ public class Book {
                 ", author ='" + author  + '\'';
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        Book book = (Book) object;
+        return  id == book.id &&
+                (title != null ? title.equals(book.title) : book.title == null) &&
+                (author != null ? author.equals(book.author) : book.author == null);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Long.hashCode(id);
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (author != null ? author.hashCode() : 0);
+        return result;
+
+    }
+
 }

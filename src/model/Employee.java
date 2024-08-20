@@ -45,5 +45,28 @@ public class Employee extends Human{
                 ", firstName='" + firstName + '\'' +
                 ", role=" + (role != null ? role.getRoleName() : "No Role Assigned");
     }
+
+    @Override
+    public boolean equals(Object object){
+        if(this == object){
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()){
+            return false;
+        }
+        Employee employee = (Employee) object;
+        return  (ssn != null ? ssn.equals(employee.ssn) : employee.ssn == null) &&
+                (firstName != null ? firstName.equals(employee.firstName) : employee.firstName == null) &&
+                (role != null ? role.equals(employee.role) : employee.role == null);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = ssn.hashCode();
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (role != null ? role.hashCode() : 0);
+        return result;
+    }
 }
 
