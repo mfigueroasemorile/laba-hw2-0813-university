@@ -39,57 +39,71 @@ public class Main {
 
         /*----------------------------------------------------------*/
         //Proffesor going to work
+        System.out.println("------------Professor goToUniverity()------------\n");
         Professor professorJohn = new Professor("5978694", "John");
         professorJohn.goToUniversity();
 
         //Administrative going to work
+        System.out.println("------------Administrative goToUniverity()------------\n");
         Employee admCharlie = new Employee("9858548", "Charlie");
         admCharlie.setRole(administrative);
         admCharlie.goToUniversity();
 
         //Student going to study
+        System.out.println("------------Student goToUniverity()------------\n");
         Major itDegree = new Major();
         itDegree.setName("IT DEGREE");
         Student emily = new Student("9858784", "Emily", itDegree);
         emily.goToUniversity();
 
         //Employee toString
-        System.out.println(admCharlie.toString());
+        System.out.println("------------Employee toString()------------\n");
+        System.out.println(admCharlie.toString()+"\n");
 
         //Student toString
-        System.out.println(emily.toString());
+        System.out.println("------------Student toString()------------\n");
+        System.out.println(emily.toString()+"\n");
 
         //Book toString
+        System.out.println("------------Book toString------------"+"\n");
         Book book = new Book("Harry Potter", "J.K. Rowling");
-        System.out.println(book.toString());
+        System.out.println(book.toString()+"\n");
 
         //Employee
         Employee employee1 = new Employee("123456", "Carlos");
         Employee employee2 = new Employee("123456", "Carlos");
 
-        System.out.println(employee1.equals(employee2));
-        System.out.println(employee1.hashCode() + ";" + employee2.hashCode());
+        System.out.println("------------Employee equals()------------\n");
+        System.out.println(employee1.equals(employee2)+"\n");
+        System.out.println("------------Employee hashCode()------------\n");
+        System.out.println(employee1.hashCode() + ";" + employee2.hashCode()+"\n");
 
         //Book
         Book book1 = new Book("Harry Potter", "J.K. Rowling");
         Book book2 = new Book("Harry Potter", "J.K. Rowling");
 
-        System.out.println(book1.equals(book2));
-        System.out.println(book1.hashCode() + ";" + book2.hashCode());
+        System.out.println("------------Book equals()------------\n");
+        System.out.println(book1.equals(book2)+"\n");
+        System.out.println("------------Book hashCode()------------\n");
+        System.out.println(book1.hashCode() + ";" + book2.hashCode()+"\n");
 
         //Student
         Student student1 = new Student("8956286", "Miranda", itDegree);
         Student student2 = new Student("8956286", "Miranda", itDegree);
 
-        System.out.println(student2.equals(student1));
-        System.out.println(student2.hashCode() + ";" + student1.hashCode());
+        System.out.println("------------Student equals()------------\n");
+        System.out.println(student2.equals(student1)+"\n");
+        System.out.println("------------Student hashCode()------------\n");
+        System.out.println(student2.hashCode() + ";" + student1.hashCode()+"\n");
 
         //Campus
         Campus campus1 = new Campus("IT CAMPUS");
         Campus campus2 = new Campus("IT CAMPUS");
 
-        System.out.println(campus1.equals(campus2));
-        System.out.println(campus1.hashCode() + ";" + campus2.hashCode());
+        System.out.println("------------Campus equals()------------\n");
+        System.out.println(campus1.equals(campus2)+"\n");
+        System.out.println("------------Campus hashCode()------------\n");
+        System.out.println(campus1.hashCode() + ";" + campus2.hashCode() +"\n");
 
     }
 }

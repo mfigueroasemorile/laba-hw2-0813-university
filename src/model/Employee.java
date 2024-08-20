@@ -35,7 +35,7 @@ public class Employee extends Human{
 
     @Override
     public void goToUniversity() {
-        System.out.println("Employee " + this.getFirstName() + " is going to university to work as a " + (this.role != null ? role.getRoleName() : "generic worker"));
+        System.out.println("Employee " + this.getFirstName() + " is going to university to work as a " + (this.role != null ? role.getRoleName()+"\n" : "generic worker"+"\n"));
     }
 
     @Override

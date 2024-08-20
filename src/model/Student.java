@@ -43,7 +43,7 @@ public class Student extends Human {
 
     @Override
     public void goToUniversity() {
-        System.out.println("Student " +this.firstName+ " is going to study");
+        System.out.println("Student " +this.firstName+ " is going to study\n");
     }
 
     @Override
