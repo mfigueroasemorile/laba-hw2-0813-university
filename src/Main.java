@@ -1,4 +1,5 @@
 import model.*;
+import service.MenuService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +38,8 @@ public class Main {
 
 
 
-        /*----------------------------------------------------------*/
-        //Proffesor going to work
+        /*----------------------------------------------------------
+        //Professor going to work
         System.out.println("------------Professor goToUniverity()------------\n");
         Professor professorJohn = new Professor("5978694", "John");
         professorJohn.goToUniversity();
@@ -70,7 +71,7 @@ public class Main {
         System.out.println(book.toString()+"\n");
 
         //Employee
-        Employee employee1 = new Employee("123456", "Carlos");
+        Employee employee1 = new Employee("123456", "Carlosss");
         Employee employee2 = new Employee("123456", "Carlos");
 
         System.out.println("------------Employee equals()------------\n");
@@ -79,7 +80,7 @@ public class Main {
         System.out.println(employee1.hashCode() + ";" + employee2.hashCode()+"\n");
 
         //Book
-        Book book1 = new Book("Harry Potter", "J.K. Rowling");
+        Book book1 = new Book("Harry Potterrr", "J.K. Rowling");
         Book book2 = new Book("Harry Potter", "J.K. Rowling");
 
         System.out.println("------------Book equals()------------\n");
@@ -104,6 +105,8 @@ public class Main {
         System.out.println(campus1.equals(campus2)+"\n");
         System.out.println("------------Campus hashCode()------------\n");
         System.out.println(campus1.hashCode() + ";" + campus2.hashCode() +"\n");
-
+*/
+        MenuService menuService = new MenuService();
+        menuService.displayMenu();
     }
 }

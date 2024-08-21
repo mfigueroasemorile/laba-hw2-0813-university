@@ -71,4 +71,16 @@ public class Subject {
     public void setHoursPerWeek(int hoursPerWeek) {
         this.hoursPerWeek = hoursPerWeek;
     }
+
+    @Override
+    public String toString() {
+        return "Subject{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", professor=" + professor +
+                ", students=" + students +
+                ", shift='" + shift + '\'' +
+                ", hoursPerWeek=" + hoursPerWeek +
+                '}';
+    }
 }

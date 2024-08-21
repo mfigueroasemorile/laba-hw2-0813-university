@@ -1,14 +1,23 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student extends Human {
     private Major major;
     private String shift;
+    private List<Subject> currentsSubjects = new ArrayList<>();
 
     public Student(String ssn, String firstName, Major major) {
         super(firstName, ssn);
         this.firstName = firstName;
         this.ssn = ssn;
         this.major = major;
+    }
+    public Student(String ssn, String firstName) {
+        super(firstName, ssn);
+        this.firstName = firstName;
+        this.ssn = ssn;
     }
 
 
@@ -24,6 +33,10 @@ public class Student extends Human {
         return shift;
     }
 
+    public List<Subject> getCurrentsSubjects() {
+        return currentsSubjects;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -36,9 +49,18 @@ public class Student extends Human {
         this.shift = shift;
     }
 
+
+    public void setCurrentsSubjects(List<Subject> currentsSubjects) {
+        this.currentsSubjects = currentsSubjects;
+    }
+
     public void enrollStudent(Major major){
         this.major = major;
         System.out.println("Student "+this.firstName+ " was successfully enroled to "+ major.getName());
+    }
+
+    public void enrollToSubject(Subject subject){
+        currentsSubjects.add(subject);
     }
 
     @Override
