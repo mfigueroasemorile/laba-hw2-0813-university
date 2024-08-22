@@ -63,6 +63,7 @@ public class Student extends Human {
         currentsSubjects.add(subject);
     }
 
+
     @Override
     public void goToUniversity() {
         System.out.println("Student " +this.firstName+ " is going to study\n");

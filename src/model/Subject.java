@@ -9,6 +9,7 @@ public class Subject {
     private List<Student> students;
     private String shift;
     private int hoursPerWeek;
+    private Exam exam;
 
     public Subject(String name, Professor professor, int hoursPerWeek) {
         this.name = name;
@@ -48,6 +49,10 @@ public class Subject {
         return hoursPerWeek;
     }
 
+    public Exam getExam() {
+        return exam;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -70,6 +75,10 @@ public class Subject {
 
     public void setHoursPerWeek(int hoursPerWeek) {
         this.hoursPerWeek = hoursPerWeek;
+    }
+
+    public void setExam(Exam exam) {
+        this.exam = exam;
     }
 
     @Override

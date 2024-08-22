@@ -1,5 +1,6 @@
 package service;
 
+import model.Exam;
 import model.Student;
 import model.Subject;
 
@@ -23,5 +24,26 @@ public class SubjectService {
             }
         }
         return null;
+    }
+
+    public void displaySubjectList(List<Subject> subjectList){
+        if(!subjectList.isEmpty()){
+            System.out.println("-------------Available subjects-------------");
+            for (Subject subject : subjectList){
+                System.out.println(subject.getName());
+            }
+        } else {
+            System.out.println("There isn't any subject available");
+        }
+
+    }
+
+    public List<Subject> createExam (Exam exam, List<Subject> subjectList, String subject){
+        for (Subject s : subjectList) {
+            if (s.getName().equalsIgnoreCase(subject)) {
+                s.setExam(exam);
+            }
+        }
+        return subjectList;
     }
 }

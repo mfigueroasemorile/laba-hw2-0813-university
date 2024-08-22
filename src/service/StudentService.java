@@ -33,4 +33,15 @@ public class StudentService {
         }
         return null;
     }
+
+    public void displayStudentSubject(Student student){
+        List<Subject> subjects = student.getCurrentsSubjects();
+        if(subjects != null){
+        for(Subject s : subjects) {
+            System.out.println(s.getName());
+        }
+        } else {
+            System.out.println("Student is not enroled to any subject");
+        }
+    }
 }
