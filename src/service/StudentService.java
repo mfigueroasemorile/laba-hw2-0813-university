@@ -10,4 +10,5 @@ public interface StudentService {
     void enrollStudentToSubject (Student student, Subject subject);
     Student searchStudentByName(String name, List<Student> students);
     void displayStudentSubject(Student student);
+    void displayStudentBookList(Student s);
 }

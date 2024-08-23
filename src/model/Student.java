@@ -7,6 +7,7 @@ public class Student extends Human {
     private Major major;
     private String shift;
     private List<Subject> currentsSubjects = new ArrayList<>();
+    private List<Book> bookList = new ArrayList<>();
 
     public Student(String ssn, String firstName, Major major) {
         super(firstName, ssn);
@@ -35,6 +36,14 @@ public class Student extends Human {
 
     public List<Subject> getCurrentsSubjects() {
         return currentsSubjects;
+    }
+
+    public List<Book> getBookList() {
+        return bookList;
+    }
+
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
     }
 
     public void setFirstName(String firstName) {

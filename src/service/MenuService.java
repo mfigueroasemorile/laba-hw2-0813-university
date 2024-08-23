@@ -1,9 +1,7 @@
 package service;
 
-import model.Exam;
-import model.Professor;
-import model.Student;
-import model.Subject;
+import model.*;
+import service.impl.BookServiceImpl;
 import service.impl.StudentServiceImpl;
 import service.impl.SubjectServiceImpl;
 
@@ -28,6 +26,7 @@ public class MenuService {
 
     StudentService studentService = new StudentServiceImpl();
     SubjectService subjectService = new SubjectServiceImpl();
+    BookService bookService = new BookServiceImpl();
     public void displayMenu() {
         Scanner scanner = new Scanner(System.in);
         int option;
@@ -40,7 +39,8 @@ public class MenuService {
             System.out.println("4. Display subject per student");
             System.out.println("5. Display available subjects");
             System.out.println("6. Set new exam");
-            System.out.println("8. Exit");
+            System.out.println("7. Create book list");
+            System.out.println("0. Exit");
             System.out.print("Select an option: ");
 
             option = scanner.nextInt();
@@ -113,7 +113,15 @@ public class MenuService {
                         }
                     }
                     break;
-                case 8:
+                case CREATE_BOOKLIST:
+                    Student st = new Student("123","Chandler");
+                    List<Book> bookList = new ArrayList<>();
+                    Book b = new Book("Harry Potter", "JK Rowling");
+                    //bookList.add(b);
+                    st.setBookList(bookService.createBookList(bookList, b));
+                    studentService.displayStudentBookList(st);
+                    break;
+                case EXIT:
                     System.out.println("Shutting down");
                     break;
                 default:
@@ -123,6 +131,8 @@ public class MenuService {
 
         scanner.close();
     }
+
+
 
     public static void main(String[] args) {
         MenuService menuService = new MenuService();
