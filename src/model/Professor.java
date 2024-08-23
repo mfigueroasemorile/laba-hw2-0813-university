@@ -36,4 +36,8 @@ public class Professor extends Employee{
         this.subjects = assignedSubjects;
         System.out.println("Professor "+ this.getFirstName()+" was succesfully assigned to subject "+ subject.getName());
     }
+
+    public final int assignedSubjects(){
+        return this.subjects.size();
+    }
 }

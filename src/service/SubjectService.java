@@ -1,49 +1,14 @@
 package service;
 
 import model.Exam;
-import model.Student;
 import model.Subject;
 
 import java.util.List;
-import java.util.Scanner;
 
-public class SubjectService {
+public interface SubjectService {
 
-
-    public Subject createSubject (){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter subject name: ");
-        String subjectName = scanner.next();
-        return new Subject(subjectName);
-    }
-
-    public Subject searchSubjectByName(String subjectName, List<Subject> subjectsList){
-        for (Subject subject : subjectsList) {
-            if (subject.getName().equalsIgnoreCase(subjectName)) {
-                return subject;
-            }
-        }
-        return null;
-    }
-
-    public void displaySubjectList(List<Subject> subjectList){
-        if(!subjectList.isEmpty()){
-            System.out.println("-------------Available subjects-------------");
-            for (Subject subject : subjectList){
-                System.out.println(subject.getName());
-            }
-        } else {
-            System.out.println("There isn't any subject available");
-        }
-
-    }
-
-    public List<Subject> createExam (Exam exam, List<Subject> subjectList, String subject){
-        for (Subject s : subjectList) {
-            if (s.getName().equalsIgnoreCase(subject)) {
-                s.setExam(exam);
-            }
-        }
-        return subjectList;
-    }
+    Subject createSubject ();
+    Subject searchSubjectByName(String subjectName, List<Subject> subjectsList);
+    void displaySubjectList(List<Subject> subjectList);
+    List<Subject> createExam (Exam exam, List<Subject> subjectList, String subject);
 }
