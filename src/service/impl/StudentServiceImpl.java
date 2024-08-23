@@ -41,7 +41,7 @@ public final class StudentServiceImpl implements StudentService {
     @Override
     public void displayStudentSubject(Student student){
         List<Subject> subjects = student.getCurrentsSubjects();
-        if(subjects.isEmpty()){
+        if(!subjects.isEmpty()){
         for(Subject s : subjects) {
             System.out.println(s.getName());
         }
