@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         University university = new University();
-        university.setName("LA model.University");
+        university.setName("LA University");
         university.setLocation(new Address("Washington St", "Los Angeles, California", "55555"));
 
 

@@ -14,7 +14,7 @@ public final class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book udateBook(Book book, Book updatedBook){
+    public Book updateBook(Book book, Book updatedBook){
         book.setAuthor(updatedBook.getAuthor());
         book.setId(updatedBook.getId());
         book.setTitle(updatedBook.getTitle());
