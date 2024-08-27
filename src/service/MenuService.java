@@ -1,9 +1,6 @@
 package service;
 
-import exception.ExamNullException;
-import exception.StudentBookListEmptyException;
-import exception.StudentNotEnrolledException;
-import exception.StudentNullException;
+import exception.*;
 import model.*;
 import service.impl.BookServiceImpl;
 import service.impl.StudentServiceImpl;
@@ -36,7 +33,7 @@ public class MenuService {
     SubjectService subjectService = new SubjectServiceImpl();
     BookService bookService = new BookServiceImpl();
 
-    public void displayMenu() throws StudentNullException, StudentNotEnrolledException, StudentBookListEmptyException {
+    public void displayMenu() throws StudentNullException, StudentNotEnrolledException, StudentBookListEmptyException, InvalidSubjectException {
         try (BufferedWriter logWriter = new BufferedWriter(new FileWriter("logfile.txt", true))) {
 
             int option;
@@ -79,17 +76,14 @@ public class MenuService {
                         Student selectedStudent = studentService.searchStudentByName(studentName, students);
 
                         if (selectedStudent == null) {
-                            System.out.println("Student not found");
-                            logWriter.write("Student not found: " + studentName + "\n");
-                            break;
+                            throw new StudentNullException("Student dosen't exists");
                         }
                         System.out.println("Insert subject: ");
                         String subjectName = scanner.next();
                         Subject selectedSubject = subjectService.searchSubjectByName(subjectName, subjects);
                         if (selectedSubject == null) {
                             System.out.println("Subject not found");
-                            logWriter.write("Subject not found: " + subjectName + "\n");
-                            break;
+                            throw new InvalidSubjectException("Subject doesn't exists");
                         }
                         studentService.enrollStudentToSubject(selectedStudent, selectedSubject);
                         System.out.println("Student " + selectedStudent.getFirstName() + " was successfully enrolled to " + selectedSubject.getName());
@@ -150,14 +144,12 @@ public class MenuService {
                 }
             } while (option != 0);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (StudentNullException | StudentNotEnrolledException | StudentBookListEmptyException e) {
+        } catch (IOException | StudentNullException | StudentNotEnrolledException | StudentBookListEmptyException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public static void main(String[] args) throws StudentNullException, StudentNotEnrolledException, StudentBookListEmptyException {
+    public static void main(String[] args) throws StudentNullException, StudentNotEnrolledException, StudentBookListEmptyException, InvalidSubjectException {
         MenuService menuService = new MenuService();
         menuService.displayMenu();
     }
