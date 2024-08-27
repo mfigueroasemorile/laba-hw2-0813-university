@@ -106,7 +106,5 @@ public class Main {
         System.out.println("------------Campus hashCode()------------\n");
         System.out.println(campus1.hashCode() + ";" + campus2.hashCode() +"\n");
 */
-        MenuService menuService = new MenuService();
-        menuService.displayMenu();
     }
 }

@@ -1,5 +1,7 @@
 package service.impl;
 
+import exception.StudentBookListEmptyException;
+import exception.StudentNotEnrolledException;
 import model.Book;
 import model.Student;
 import model.Subject;
@@ -39,7 +41,7 @@ public final class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public void displayStudentSubject(Student student){
+    public void displayStudentSubject(Student student) throws StudentNotEnrolledException {
         List<Subject> subjects = student.getCurrentsSubjects();
         if(!subjects.isEmpty()){
         for(Subject s : subjects) {
@@ -47,13 +49,15 @@ public final class StudentServiceImpl implements StudentService {
         }
         } else {
             System.out.println("Student is not enroled to any subject");
+            throw new StudentNotEnrolledException("Student is not enroled to any subject exception");
         }
     }
 
     @Override
-    public void displayStudentBookList(Student s){
+    public void displayStudentBookList(Student s) throws StudentBookListEmptyException {
         if(s.getBookList().isEmpty()){
-            System.out.println("Student book list is empty");
+            //System.out.println("Student book list is empty");
+            throw new StudentBookListEmptyException("Student book list is empty exception");
         } else {
             for(Book b : s.getBookList()){
                 System.out.println(b.getTitle());
