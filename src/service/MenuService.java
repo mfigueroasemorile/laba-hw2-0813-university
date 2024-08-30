@@ -9,10 +9,7 @@ import service.impl.SubjectServiceImpl;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static constants.MenuConstants.*;
 
@@ -26,12 +23,12 @@ public class MenuService {
         System.out.println("---------------------------------------------------------\n\n");
     }
 
-    private List<Student> students = new ArrayList<>();
+    private Set<Student> students = new HashSet<>();
     private List<Subject> subjects = new ArrayList<>();
-
-    StudentService studentService = new StudentServiceImpl();
-    SubjectService subjectService = new SubjectServiceImpl();
-    BookService bookService = new BookServiceImpl();
+    private Map<Subject, Professor> subjectProfessorMap = new HashMap<>();
+    IStudentService studentService = new StudentServiceImpl();
+    ISubjectService subjectService = new SubjectServiceImpl();
+    IBookService bookService = new BookServiceImpl();
 
     public void displayMenu() throws StudentNullException, StudentNotEnrolledException, StudentBookListEmptyException, InvalidSubjectException {
         try (BufferedWriter logWriter = new BufferedWriter(new FileWriter("logfile.txt", true))) {
@@ -49,6 +46,7 @@ public class MenuService {
                 System.out.println("5. Display available subjects");
                 System.out.println("6. Set new exam");
                 System.out.println("7. Create book list");
+                System.out.println("8. Assign professor to subject");
                 System.out.println("0. Exit");
                 System.out.print("Select an option: ");
 
@@ -58,10 +56,14 @@ public class MenuService {
                 switch (option) {
                     case CREATE_STUDENT:
                         Student student = studentService.createStudent();
-                        System.out.println("Student created");
-                        System.out.println(student.toString());
-                        students.add(student);
-                        logWriter.write("Student created: " + student.toString() + "\n");
+                        if (students.contains(student)){
+                            System.out.println("A student with this SSN already exists.");
+                            logWriter.write("Attempted to create a duplicate student: " + student.toString() + "\n");
+                        } else {
+                            students.add(student);
+                            System.out.println("Student created successfully.");
+                            logWriter.write("Student created: " + student.toString() + "\n");
+                        }
                         break;
                     case CREATE_SUBJECT:
                         Subject subject = subjectService.createSubject();
@@ -131,8 +133,31 @@ public class MenuService {
                         Student st = new Student("123", "Chandler");
                         List<Book> bookList = new ArrayList<>();
                         Book b = new Book("Harry Potter", "JK Rowling");
+                        st.setBookList(bookService.createBookList(bookList, b));
                         studentService.displayStudentBookList(st);
                         logWriter.write("Displayed book list for student: " + st.getFirstName() + "\n");
+                        break;
+
+                    case ASSIGN_PROFESSOR:
+                        Professor p1 = new Professor("54321", "Louis");
+                        Professor p2 = new Professor("12345", "Walter");
+                        Subject math = new Subject("Math");
+                        Subject law = new Subject("Law");
+                        subjectService.assignProfessorToSubject(math,p1,subjectProfessorMap);
+                        subjectService.assignProfessorToSubject(law,p2,subjectProfessorMap);
+                        System.out.println("---------------------------------------------");
+                        for (Map.Entry<Subject, Professor> entry : subjectProfessorMap.entrySet()) {
+                            System.out.println(entry.getKey().getName() + ":" + entry.getValue().getFirstName());
+                        }
+                        System.out.println("---------------------------------------------");
+                        break;
+                    case STUDENTS_QUEUE:
+                        Book harryPotter = new Book("Harry Potter", "JKR");
+                        Student s1 = new Student("1233", "Saul");
+                        Student s2 = new Student("4567", "Gustavo");
+                        harryPotter.addStudentToQueue(s2);
+                        harryPotter.addStudentToQueue(s1);
+                        harryPotter.getStudentsFromQueue();
                         break;
                     case EXIT:
                         System.out.println("Shutting down");

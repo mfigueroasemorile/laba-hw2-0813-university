@@ -5,12 +5,13 @@ import exception.StudentNotEnrolledException;
 import model.Book;
 import model.Student;
 import model.Subject;
-import service.StudentService;
+import service.IStudentService;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
-public final class StudentServiceImpl implements StudentService {
+public final class StudentServiceImpl implements IStudentService {
 
     @Override
     public Student createStudent(){
@@ -31,7 +32,7 @@ public final class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student searchStudentByName(String name, List<Student> students){
+    public Student searchStudentByName(String name, Set<Student> students){
         for (Student student : students) {
             if (student.getFirstName().equalsIgnoreCase(name)) {
                 return student;

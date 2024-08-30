@@ -1,13 +1,15 @@
 package service.impl;
 
 import model.Exam;
+import model.Professor;
 import model.Subject;
-import service.SubjectService;
+import service.ISubjectService;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
-public final class SubjectServiceImpl implements SubjectService {
+public final class SubjectServiceImpl implements ISubjectService {
 
 
     @Override
@@ -49,5 +51,10 @@ public final class SubjectServiceImpl implements SubjectService {
             }
         }
         return subjectList;
+    }
+
+    @Override
+    public void assignProfessorToSubject(Subject subject, Professor professor, Map<Subject, Professor> courseProfessorMap) {
+        courseProfessorMap.put(subject, professor);
     }
 }

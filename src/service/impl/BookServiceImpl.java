@@ -1,12 +1,11 @@
 package service.impl;
 
 import model.Book;
-import service.BookService;
+import service.IBookService;
 
 import java.util.List;
-import java.util.Objects;
 
-public final class BookServiceImpl implements BookService {
+public final class BookServiceImpl implements IBookService {
 
     @Override
     public Book createNewBook(String title, String author){

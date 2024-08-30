@@ -109,4 +109,5 @@ public class Student extends Human {
         result = 31 * result + (major != null ? major.hashCode() : 0);
         return result;
     }
+
 }

@@ -1,12 +1,13 @@
 package model;
 
-import java.util.List;
+import java.util.*;
 
 public class Book {
 
     private long id;
     private String title;
     private String author;
+    private Queue<Student> studentQueueBook = new LinkedList<>();
 
     public Book(String title, String author) {
         this.title = title;
@@ -67,4 +68,15 @@ public class Book {
 
     }
 
+    public void addStudentToQueue(Student student){
+        this.studentQueueBook.offer(student);
+    }
+
+    public void getStudentsFromQueue() {
+        System.out.println("---------------------------------------------");
+        while (!studentQueueBook.isEmpty()) {
+            Student student = studentQueueBook.poll();
+            System.out.println(student.getFirstName());
+        }
+    }
 }

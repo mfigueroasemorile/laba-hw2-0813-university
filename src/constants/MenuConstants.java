@@ -9,5 +9,7 @@ public class MenuConstants {
     public static final int DISPLAY_SUBJECTS = 5;
     public static final int SET_EXAM = 6;
     public static final int CREATE_BOOKLIST = 7;
+    public static final int ASSIGN_PROFESSOR = 8;
+    public static final int STUDENTS_QUEUE = 9;
     public static final int EXIT = 0;
 }
