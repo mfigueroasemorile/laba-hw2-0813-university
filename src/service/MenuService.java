@@ -1,6 +1,8 @@
 package service;
 
 import exception.*;
+import generic.People;
+import generic.PeopleLinkedList;
 import model.*;
 import service.impl.BookServiceImpl;
 import service.impl.StudentServiceImpl;
@@ -175,8 +177,35 @@ public class MenuService {
     }
 
     public static void main(String[] args) throws StudentNullException, StudentNotEnrolledException, StudentBookListEmptyException, InvalidSubjectException {
-        MenuService menuService = new MenuService();
-        menuService.displayMenu();
+
+        PeopleLinkedList<Student> studentsLinkedList = new PeopleLinkedList<>();
+        Student s1 = new Student("12345", "Michael");
+        Student s2 = new Student("43221", "Richard");
+        Student s3 = new Student("78945", "Emily");
+
+        System.out.println("Adding 3 students\n");
+        studentsLinkedList.add(0,s1);
+        studentsLinkedList.add(1,s2);
+        studentsLinkedList.add(2,s3);
+
+        studentsLinkedList.displayList(studentsLinkedList);
+
+        System.out.println("Removing index 1\n");
+        studentsLinkedList.remove(1);
+        studentsLinkedList.displayList(studentsLinkedList);
+
+        System.out.println("Removing Emily\n");
+        studentsLinkedList.remove(s3);
+        studentsLinkedList.displayList(studentsLinkedList);
+
+        System.out.println("Getting first index\n");
+        System.out.println(studentsLinkedList.get(0));
+
+        System.out.println("\nSet student in first place\n");
+        studentsLinkedList.set(0,s2);
+        studentsLinkedList.displayList(studentsLinkedList);
+        /*MenuService menuService = new MenuService();
+        menuService.displayMenu();*/
     }
 
 }
