@@ -157,8 +157,8 @@ public class MenuService {
                         Book harryPotter = new Book("Harry Potter", "JKR");
                         Student s1 = new Student("1233", "Saul");
                         Student s2 = new Student("4567", "Gustavo");
-                        harryPotter.addStudentToQueue(s2);
                         harryPotter.addStudentToQueue(s1);
+                        harryPotter.addStudentToQueue(s2);
                         harryPotter.getStudentsFromQueue();
                         break;
                     case EXIT:
@@ -173,6 +173,10 @@ public class MenuService {
 
         } catch (IOException | StudentNullException | StudentNotEnrolledException | StudentBookListEmptyException e) {
             System.out.println(e.getMessage());
+        } catch (InputMismatchException e){
+            System.out.println(e.getMessage());
+            System.out.println("Invalid option, please enter a number");
+            this.displayMenu();
         }
     }
 
