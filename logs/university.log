@@ -112,3 +112,29 @@
 
 2024-09-03 09:25:32 [main] INFO  service.MenuService - System shutting down.
 
+2024-09-03 09:37:21 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:42:36 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:42:38 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-03 09:42:41 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-03 09:42:41 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:42:42 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-03 09:42:46 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=math, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null)
+
+2024-09-03 09:42:46 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:42:47 [main] INFO  service.MenuService - User selected option: 3
+
+2024-09-03 09:42:49 [main] INFO  service.MenuService - Student max enrolled to math
+
+2024-09-03 09:42:49 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:42:54 [main] INFO  service.MenuService - User selected option: 4
+
+2024-09-03 09:42:54 [main] INFO  service.MenuService - Student doesn't exist exception
+
