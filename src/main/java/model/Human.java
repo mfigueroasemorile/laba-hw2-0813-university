@@ -1,5 +1,8 @@
 package model;
 
+import lombok.Data;
+
+@Data
 public abstract class Human {
     protected String ssn;
     protected String firstName;
@@ -10,6 +13,7 @@ public abstract class Human {
         this.ssn = ssn;
         this.firstName = firstName;
     }
+    public Human (){}
 
     public abstract void goToUniversity();
 }

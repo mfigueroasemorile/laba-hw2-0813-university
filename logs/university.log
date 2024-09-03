@@ -1,0 +1,114 @@
+2024-09-03 08:41:30 [main] INFO  service.MenuService - MENU DISPLAYED
+2024-09-03 08:42:01 [main] INFO  service.MenuService - MENU DISPLAYED
+2024-09-03 08:42:07 [main] ERROR service.MenuService - Attempted to create a duplicate student: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-03 08:42:07 [main] INFO  service.MenuService - MENU DISPLAYED
+2024-09-03 08:45:38 [main] INFO  service.MenuService - MENU DISPLAYED
+2024-09-03 08:45:47 [main] INFO  service.MenuService - MENU DISPLAYED
+2024-09-03 08:49:11 [main] INFO  service.MenuService - MENU DISPLAYED
+2024-09-03 08:49:16 [main] INFO  service.MenuService - MENU DISPLAYED
+2024-09-03 08:49:18 [main] ERROR service.MenuService - Attempted to create a duplicate student: ssn='123', firstName='1', lastName='null', major='No major assigned'
+
+2024-09-03 08:49:18 [main] INFO  service.MenuService - MENU DISPLAYED
+2024-09-03 08:56:38 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 08:56:44 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-03 08:56:50 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-03 08:56:50 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 08:56:52 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-03 08:56:54 [main] INFO  service.MenuService - Subject created: Subject{id=0, name='math', professor=null, students=null, shift='null', hoursPerWeek=0}
+
+2024-09-03 08:56:54 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 08:56:57 [main] INFO  service.MenuService - User selected option: 3
+
+2024-09-03 08:57:53 [main] INFO  service.MenuService - Student max enrolled to math
+
+2024-09-03 08:57:53 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 08:58:02 [main] INFO  service.MenuService - User selected option: 5
+
+2024-09-03 08:58:02 [main] INFO  service.MenuService - Displayed available subjects.
+
+2024-09-03 08:58:02 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 08:58:05 [main] INFO  service.MenuService - User selected option: 0
+
+2024-09-03 08:58:05 [main] INFO  service.MenuService - System shutting down.
+
+2024-09-03 09:21:50 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:21:56 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-03 09:22:01 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-03 09:22:01 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:22:02 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-03 09:22:05 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=math, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null)
+
+2024-09-03 09:22:05 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:22:06 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-03 09:22:09 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=chemistry, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null)
+
+2024-09-03 09:22:09 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:22:52 [main] INFO  service.MenuService - User selected option: 3
+
+2024-09-03 09:22:55 [main] INFO  service.MenuService - Student max enrolled to math
+
+2024-09-03 09:22:55 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:22:58 [main] INFO  service.MenuService - User selected option: 4
+
+2024-09-03 09:22:59 [main] INFO  service.MenuService - Displayed subjects for student: max
+
+2024-09-03 09:22:59 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:23:11 [main] INFO  service.MenuService - User selected option: 5
+
+2024-09-03 09:23:11 [main] INFO  service.MenuService - Displayed available subjects.
+
+2024-09-03 09:23:11 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:23:17 [main] INFO  service.MenuService - User selected option: 6
+
+2024-09-03 09:23:25 [main] INFO  service.MenuService - Exam set for subject: math
+
+2024-09-03 09:23:25 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:23:41 [main] INFO  service.MenuService - User selected option: 7
+
+2024-09-03 09:23:41 [main] INFO  service.MenuService - Displayed book list for student: Chandler
+
+2024-09-03 09:23:41 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:23:55 [main] INFO  service.MenuService - User selected option: 8
+
+2024-09-03 09:23:55 [main] INFO  service.MenuService - Proffesor Lawassigned to Walter
+2024-09-03 09:23:55 [main] INFO  service.MenuService - Proffesor Mathassigned to Louis
+2024-09-03 09:23:55 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:24:12 [main] INFO  service.MenuService - User selected option: 9
+
+2024-09-03 09:24:12 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:25:23 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:25:26 [main] INFO  service.MenuService - User selected option: 8
+
+2024-09-03 09:25:26 [main] INFO  service.MenuService - Proffesor Walter assigned to Law
+2024-09-03 09:25:26 [main] INFO  service.MenuService - Proffesor Louis assigned to Math
+2024-09-03 09:25:26 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-03 09:25:32 [main] INFO  service.MenuService - User selected option: 0
+
+2024-09-03 09:25:32 [main] INFO  service.MenuService - System shutting down.
+

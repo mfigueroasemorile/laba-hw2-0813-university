@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.util.*;
 
 import static constants.MenuConstants.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class MenuService {
 
@@ -25,6 +27,7 @@ public class MenuService {
         System.out.println("---------------------------------------------------------\n\n");
     }
 
+    private static final Logger LOGGER = LogManager.getLogger(MenuService.class);
     private Set<Student> students = new HashSet<>();
     private List<Subject> subjects = new ArrayList<>();
     private Map<Subject, Professor> subjectProfessorMap = new HashMap<>();
@@ -39,7 +42,7 @@ public class MenuService {
             Scanner scanner = new Scanner(System.in);
             do {
                 System.out.println("--------- MENU ---------");
-                logWriter.write("Displaying menu options.\n");
+                LOGGER.info("Displaying menu options.\n");
 
                 System.out.println("1. Create new student");
                 System.out.println("2. Create new subject");
@@ -49,22 +52,23 @@ public class MenuService {
                 System.out.println("6. Set new exam");
                 System.out.println("7. Create book list");
                 System.out.println("8. Assign professor to subject");
+                System.out.println("9. Student queue");
                 System.out.println("0. Exit");
                 System.out.print("Select an option: ");
 
                 option = scanner.nextInt();
-                logWriter.write("User selected option: " + option + "\n");
+                LOGGER.info("User selected option: " + option + "\n");
 
                 switch (option) {
                     case CREATE_STUDENT:
                         Student student = studentService.createStudent();
                         if (students.contains(student)){
                             System.out.println("A student with this SSN already exists.");
-                            logWriter.write("Attempted to create a duplicate student: " + student.toString() + "\n");
+                            LOGGER.error("Attempted to create a duplicate student: " + student.toString() + "\n");
                         } else {
                             students.add(student);
                             System.out.println("Student created successfully.");
-                            logWriter.write("Student created: " + student.toString() + "\n");
+                            LOGGER.info("Student created: " + student.toString() + "\n");
                         }
                         break;
                     case CREATE_SUBJECT:
@@ -72,7 +76,7 @@ public class MenuService {
                         System.out.println("Subject created");
                         System.out.println(subject.toString());
                         subjects.add(subject);
-                        logWriter.write("Subject created: " + subject.toString() + "\n");
+                        LOGGER.info("Subject created: " + subject.toString() + "\n");
                         break;
                     case ENROLL_STUDENT:
                         System.out.println("Insert student: ");
@@ -91,23 +95,23 @@ public class MenuService {
                         }
                         studentService.enrollStudentToSubject(selectedStudent, selectedSubject);
                         System.out.println("Student " + selectedStudent.getFirstName() + " was successfully enrolled to " + selectedSubject.getName());
-                        logWriter.write("Student " + selectedStudent.getFirstName() + " enrolled to " + selectedSubject.getName() + "\n");
+                        LOGGER.info("Student " + selectedStudent.getFirstName() + " enrolled to " + selectedSubject.getName() + "\n");
                         break;
                     case DISPLAY_SUBJECT_STUDENT:
                         System.out.println("Insert student name: ");
                         String name = scanner.next();
                         Student s = studentService.searchStudentByName(name, students);
                         if (s == null) {
-                            logWriter.write("Student doesn't exist exception" + "\n");
+                            LOGGER.info("Student doesn't exist exception" + "\n");
                             throw new StudentNullException("Student doesn't exist exception");
                         }
                         System.out.println("---------------------Subjects---------------------");
                         studentService.displayStudentSubject(s);
-                        logWriter.write("Displayed subjects for student: " + s.getFirstName() + "\n");
+                        LOGGER.info("Displayed subjects for student: " + s.getFirstName() + "\n");
                         break;
                     case DISPLAY_SUBJECTS:
                         subjectService.displaySubjectList(subjects);
-                        logWriter.write("Displayed available subjects.\n");
+                        LOGGER.info("Displayed available subjects.\n");
                         break;
                     case SET_EXAM:
                         Professor professorCharlie = new Professor("5456654", "Charlie");
@@ -129,7 +133,7 @@ public class MenuService {
                                 System.out.println("---------------------------------");
                             }
                         }
-                        logWriter.write("Exam set for subject: " + subjName + "\n");
+                        LOGGER.info("Exam set for subject: " + subjName + "\n");
                         break;
                     case CREATE_BOOKLIST:
                         Student st = new Student("123", "Chandler");
@@ -137,7 +141,7 @@ public class MenuService {
                         Book b = new Book("Harry Potter", "JK Rowling");
                         st.setBookList(bookService.createBookList(bookList, b));
                         studentService.displayStudentBookList(st);
-                        logWriter.write("Displayed book list for student: " + st.getFirstName() + "\n");
+                        LOGGER.info("Displayed book list for student: " + st.getFirstName() + "\n");
                         break;
 
                     case ASSIGN_PROFESSOR:
@@ -150,6 +154,7 @@ public class MenuService {
                         System.out.println("---------------------------------------------");
                         for (Map.Entry<Subject, Professor> entry : subjectProfessorMap.entrySet()) {
                             System.out.println(entry.getKey().getName() + ":" + entry.getValue().getFirstName());
+                            LOGGER.info("Proffesor " + entry.getValue().getFirstName() + " assigned to " + entry.getKey().getName());
                         }
                         System.out.println("---------------------------------------------");
                         break;
@@ -162,12 +167,11 @@ public class MenuService {
                         harryPotter.getStudentsFromQueue();
                         break;
                     case EXIT:
-                        System.out.println("Shutting down");
-                        logWriter.write("System shutting down.\n");
+                        LOGGER.info("System shutting down.\n");
                         break;
                     default:
+                        LOGGER.info("Invalid option selected: " + option + "\n");
                         System.out.println("Invalid option, please choose an option between 1 and 7.");
-                        logWriter.write("Invalid option selected: " + option + "\n");
                 }
             } while (option != 0);
 
@@ -175,6 +179,7 @@ public class MenuService {
             System.out.println(e.getMessage());
         } catch (InputMismatchException e){
             System.out.println(e.getMessage());
+            LOGGER.error("Invalid option");
             System.out.println("Invalid option, please enter a number");
             this.displayMenu();
         }
@@ -182,7 +187,7 @@ public class MenuService {
 
     public static void main(String[] args) throws StudentNullException, StudentNotEnrolledException, StudentBookListEmptyException, InvalidSubjectException {
 
-        PeopleLinkedList<Student> studentsLinkedList = new PeopleLinkedList<>();
+/*        PeopleLinkedList<Student> studentsLinkedList = new PeopleLinkedList<>();
         Student s1 = new Student("12345", "Michael");
         Student s2 = new Student("43221", "Richard");
         Student s3 = new Student("78945", "Emily");
@@ -207,9 +212,9 @@ public class MenuService {
 
         System.out.println("\nSet student in first place\n");
         studentsLinkedList.set(0,s2);
-        studentsLinkedList.displayList(studentsLinkedList);
-        /*MenuService menuService = new MenuService();
-        menuService.displayMenu();*/
+        studentsLinkedList.displayList(studentsLinkedList);*/
+        MenuService menuService = new MenuService();
+        menuService.displayMenu();
     }
 
 }
