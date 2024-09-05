@@ -145,25 +145,32 @@ public class MenuService {
                         break;
 
                     case ASSIGN_PROFESSOR:
-                        Professor p1 = new Professor("54321", "Louis");
-                        Professor p2 = new Professor("12345", "Walter");
-                        Subject math = new Subject("Math");
-                        Subject law = new Subject("Law");
-                        subjectService.assignProfessorToSubject(math,p1,subjectProfessorMap);
-                        subjectService.assignProfessorToSubject(law,p2,subjectProfessorMap);
-                        System.out.println("---------------------------------------------");
-                        for (Map.Entry<Subject, Professor> entry : subjectProfessorMap.entrySet()) {
-                            System.out.println(entry.getKey().getName() + ":" + entry.getValue().getFirstName());
-                            LOGGER.info("Proffesor " + entry.getValue().getFirstName() + " assigned to " + entry.getKey().getName());
+                        System.out.println("Insert professor ssn: ");
+                        String ssnp1 = scanner.next();
+                        System.out.println("Insert professor name: ");
+                        String namep1 = scanner.next();
+                        System.out.println("Insert subject name: ");
+                        String s1 = scanner.next();
+                        Professor p1 = new Professor(ssnp1, namep1);
+                        Subject subjSelected = subjectService.searchSubjectByName(s1, subjects);
+                        if (subjSelected != null){
+                            subjectService.assignProfessorToSubject(subjSelected,p1,subjectProfessorMap);
+                            System.out.println("---------------------------------------------");
+                            for (Map.Entry<Subject, Professor> entry : subjectProfessorMap.entrySet()) {
+                                LOGGER.info("Proffesor " + entry.getValue().getFirstName() + " assigned to " + entry.getKey().getName());
+                            }
+                            System.out.println("---------------------------------------------");
+
+                        } else {
+                            LOGGER.error("Subject does not exist");
                         }
-                        System.out.println("---------------------------------------------");
                         break;
                     case STUDENTS_QUEUE:
                         Book harryPotter = new Book("Harry Potter", "JKR");
-                        Student s1 = new Student("1233", "Saul");
-                        Student s2 = new Student("4567", "Gustavo");
-                        harryPotter.addStudentToQueue(s1);
-                        harryPotter.addStudentToQueue(s2);
+                        Student subj1 = new Student("1233", "Saul");
+                        Student subj2 = new Student("4567", "Gustavo");
+                        harryPotter.addStudentToQueue(subj1);
+                        harryPotter.addStudentToQueue(subj2);
                         harryPotter.getStudentsFromQueue();
                         break;
                     case EXIT:
