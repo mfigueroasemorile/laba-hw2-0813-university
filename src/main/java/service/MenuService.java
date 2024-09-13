@@ -12,6 +12,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+import java.util.function.BiConsumer;
+import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 import static constants.MenuConstants.*;
 import org.apache.logging.log4j.LogManager;
@@ -53,6 +57,7 @@ public class MenuService {
                 System.out.println("7. Create book list");
                 System.out.println("8. Assign professor to subject");
                 System.out.println("9. Student queue");
+                System.out.println("10. Display all students");
                 System.out.println("0. Exit");
                 System.out.print("Select an option: ");
 
@@ -62,8 +67,11 @@ public class MenuService {
                 switch (option) {
                     case CREATE_STUDENT:
                         Student student = studentService.createStudent();
-                        if (students.contains(student)){
-                            System.out.println("A student with this SSN already exists.");
+                        //Implementation of Predicate:
+                        Predicate<Student> studentExists = s1 -> s1.getFirstName().equals(student.getFirstName());
+                        boolean exists = students.stream().anyMatch(studentExists);
+                        if (exists){
+                            System.out.println("This student already exists");
                             LOGGER.error("Attempted to create a duplicate student: " + student.toString() + "\n");
                         } else {
                             students.add(student);
@@ -93,7 +101,11 @@ public class MenuService {
                             System.out.println("Subject not found");
                             throw new InvalidSubjectException("Subject doesn't exists");
                         }
-                        studentService.enrollStudentToSubject(selectedStudent, selectedSubject);
+                        //Implementation of BiConsumer to enrroll student to subject:
+                        BiConsumer<Student,Subject> enrollStudent = (st, sj) ->selectedStudent.enrollToSubject(selectedSubject);
+                        enrollStudent.accept(selectedStudent,selectedSubject);
+//                        studentService.enrollStudentToSubject(selectedStudent, selectedSubject);
+
                         System.out.println("Student " + selectedStudent.getFirstName() + " was successfully enrolled to " + selectedSubject.getName());
                         LOGGER.info("Student " + selectedStudent.getFirstName() + " enrolled to " + selectedSubject.getName() + "\n");
                         break;
@@ -172,6 +184,9 @@ public class MenuService {
                         harryPotter.addStudentToQueue(subj1);
                         harryPotter.addStudentToQueue(subj2);
                         harryPotter.getStudentsFromQueue();
+                        break;
+                    case DISPLAY_STUDENTS:
+                        studentService.displayStudents(students);
                         break;
                     case EXIT:
                         LOGGER.info("System shutting down.\n");

@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
+import java.util.function.Consumer;
+
 public final class StudentServiceImpl implements IStudentService {
 
     @Override
@@ -64,5 +66,17 @@ public final class StudentServiceImpl implements IStudentService {
                 System.out.println(b.getTitle());
             }
         }
+    }
+
+    @Override
+    public void displayStudents(Set<Student> students){
+
+        //Implementation of Consumer to display all available students
+        Consumer<Student> displayStudentInfo = st -> {
+            System.out.println("Name: " + st.getFirstName());
+            System.out.println("SSN: " + st.getSsn());
+            };
+        students.forEach(displayStudentInfo);
+
     }
 }

@@ -2,12 +2,13 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import Enum.StudentStatus;
 public class Student extends Human {
     private Major major;
     private String shift;
     private List<Subject> currentsSubjects = new ArrayList<>();
     private List<Book> bookList = new ArrayList<>();
+    private StudentStatus status;
 
     public Student(String ssn, String firstName, Major major) {
         super(firstName, ssn);

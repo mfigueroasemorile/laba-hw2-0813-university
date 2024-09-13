@@ -171,3 +171,123 @@
 
 2024-09-04 21:47:51 [main] INFO  service.MenuService - System shutting down.
 
+2024-09-12 20:21:08 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 20:21:11 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 20:21:14 [main] INFO  service.MenuService - Student created: ssn='max', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-12 20:21:14 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 20:21:21 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-12 20:21:26 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=math, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null)
+
+2024-09-12 20:21:26 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 20:21:28 [main] INFO  service.MenuService - User selected option: 3
+
+2024-09-12 20:21:31 [main] INFO  service.MenuService - Student max enrolled to math
+
+2024-09-12 20:21:31 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 20:21:36 [main] INFO  service.MenuService - User selected option: 4
+
+2024-09-12 20:21:38 [main] INFO  service.MenuService - Displayed subjects for student: max
+
+2024-09-12 20:21:38 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 20:21:42 [main] INFO  service.MenuService - User selected option: 3
+
+2024-09-12 20:57:57 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 20:58:01 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 20:58:04 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-12 20:58:04 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 20:58:07 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 20:58:12 [main] ERROR service.MenuService - Attempted to create a duplicate student: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-12 20:58:12 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 20:58:24 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 20:58:26 [main] INFO  service.MenuService - Student created: ssn='123', firstName='sadasd', lastName='null', major='No major assigned'
+
+2024-09-12 20:58:26 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:06:51 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:06:54 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 21:06:57 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-12 21:06:57 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:06:59 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 21:07:02 [main] INFO  service.MenuService - Student created: ssn='234', firstName='eve', lastName='null', major='No major assigned'
+
+2024-09-12 21:07:02 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:07:06 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 21:07:09 [main] INFO  service.MenuService - Student created: ssn='223', firstName='mir', lastName='null', major='No major assigned'
+
+2024-09-12 21:07:09 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:07:14 [main] INFO  service.MenuService - User selected option: 10
+
+2024-09-12 21:07:14 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:08:04 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:08:08 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 21:08:13 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-12 21:08:13 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:08:14 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 21:08:20 [main] INFO  service.MenuService - Student created: ssn='213', firstName='ece', lastName='null', major='No major assigned'
+
+2024-09-12 21:08:20 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:08:22 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 21:08:26 [main] INFO  service.MenuService - Student created: ssn='132323', firstName='moe', lastName='null', major='No major assigned'
+
+2024-09-12 21:08:26 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:08:29 [main] INFO  service.MenuService - User selected option: 10
+
+2024-09-12 21:08:29 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:12:08 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:12:10 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 21:12:12 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-12 21:12:12 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:12:13 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 21:12:15 [main] INFO  service.MenuService - Student created: ssn='2345', firstName='mir', lastName='null', major='No major assigned'
+
+2024-09-12 21:12:15 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:12:16 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-12 21:12:19 [main] INFO  service.MenuService - Student created: ssn='32434', firstName='eve', lastName='null', major='No major assigned'
+
+2024-09-12 21:12:19 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-12 21:12:20 [main] INFO  service.MenuService - User selected option: 10
+
+2024-09-12 21:12:20 [main] INFO  service.MenuService - Displaying menu options.
+

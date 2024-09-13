@@ -1,7 +1,7 @@
 package model;
 
 import lombok.Data;
-
+import Enum.BookType;
 import java.util.*;
 
 @Data
@@ -11,6 +11,7 @@ public class Book {
     private String title;
     private String author;
     private Queue<Student> studentQueueBook = new LinkedList<>();
+    private BookType type;
 
     public Book(String title, String author) {
         this.title = title;

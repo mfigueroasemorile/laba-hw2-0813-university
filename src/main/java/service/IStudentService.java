@@ -14,4 +14,5 @@ public interface IStudentService {
     Student searchStudentByName(String name, Set<Student> students);
     void displayStudentSubject(Student student) throws StudentNotEnrolledException;
     void displayStudentBookList(Student s) throws StudentBookListEmptyException;
+    void displayStudents (Set<Student> students);
 }

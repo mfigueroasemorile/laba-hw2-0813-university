@@ -3,7 +3,7 @@ package model;
 import lombok.Data;
 
 import java.util.List;
-
+import Enum.SubjectCategory;
 @Data
 public class Subject {
     private long id;
@@ -13,6 +13,7 @@ public class Subject {
     private String shift;
     private int hoursPerWeek;
     private Exam exam;
+    private SubjectCategory subjectCategory;
 
     public Subject(String name, Professor professor, int hoursPerWeek) {
         this.name = name;
