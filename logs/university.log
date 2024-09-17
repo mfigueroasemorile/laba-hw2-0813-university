@@ -501,3 +501,16 @@
 
 2024-09-16 21:38:40 [main] INFO  service.MenuService - System shutting down.
 
+2024-09-17 11:33:36 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-17 11:33:44 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-17 11:33:45 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=math, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-17 11:33:45 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-17 11:33:50 [main] INFO  service.MenuService - User selected option: 8
+
+2024-09-17 11:34:15 [main] INFO  service.MenuService - Professor: Charlie assigned to math
+2024-09-17 11:34:15 [main] INFO  service.MenuService - Displaying menu options.
+

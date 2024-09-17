@@ -168,9 +168,9 @@ public class MenuService {
                         if (subjSelected != null){
                             subjectService.assignProfessorToSubject(subjSelected,p1,subjectProfessorMap);
                             System.out.println("---------------------------------------------");
-                            for (Map.Entry<Subject, Professor> entry : subjectProfessorMap.entrySet()) {
-                                LOGGER.info("Proffesor " + entry.getValue().getFirstName() + " assigned to " + entry.getKey().getName());
-                            }
+                            subjectProfessorMap.forEach((subj, professor) ->{
+                                LOGGER.info("Professor: " + professor.getFirstName() + " assigned to " + subj.getName());
+                            });
                             System.out.println("---------------------------------------------");
 
                         } else {
