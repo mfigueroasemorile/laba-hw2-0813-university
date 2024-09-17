@@ -291,3 +291,213 @@
 
 2024-09-12 21:12:20 [main] INFO  service.MenuService - Displaying menu options.
 
+2024-09-16 21:01:47 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:01:52 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:02:02 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-16 21:02:05 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-16 21:02:05 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:02:06 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-16 21:02:12 [main] INFO  service.MenuService - Student created: ssn='123', firstName='eve', lastName='null', major='No major assigned'
+
+2024-09-16 21:02:12 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:02:14 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-16 21:02:18 [main] INFO  service.MenuService - Student created: ssn='1232', firstName='mir', lastName='null', major='No major assigned'
+
+2024-09-16 21:02:18 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:02:25 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:02:26 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=math, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:02:26 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:02:28 [main] INFO  service.MenuService - User selected option: 3
+
+2024-09-16 21:03:21 [main] INFO  service.MenuService - Student eve enrolled to math
+
+2024-09-16 21:03:21 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:16:03 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:16:04 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-16 21:16:06 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-16 21:16:06 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:16:07 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-16 21:16:09 [main] INFO  service.MenuService - Student created: ssn='123', firstName='eve', lastName='null', major='No major assigned'
+
+2024-09-16 21:16:09 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:16:10 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-16 21:16:12 [main] INFO  service.MenuService - Student created: ssn='123', firstName='miri', lastName='null', major='No major assigned'
+
+2024-09-16 21:16:12 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:16:14 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:16:14 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=math, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:16:14 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:16:15 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:16:17 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=chemistry, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:16:17 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:16:20 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:16:24 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=history, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:16:24 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:16:26 [main] INFO  service.MenuService - User selected option: 3
+
+2024-09-16 21:17:09 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:17:12 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-16 21:17:15 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-16 21:17:15 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:17:16 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:17:18 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=math, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:17:18 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:17:20 [main] INFO  service.MenuService - User selected option: 3
+
+2024-09-16 21:20:43 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:20:46 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-16 21:20:48 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-16 21:20:48 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:20:49 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-16 21:20:52 [main] INFO  service.MenuService - Student created: ssn='123', firstName='eve', lastName='null', major='No major assigned'
+
+2024-09-16 21:20:52 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:20:53 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:20:54 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=math, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:20:54 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:20:57 [main] ERROR service.MenuService - Invalid option
+2024-09-16 21:20:57 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:20:58 [main] INFO  service.MenuService - User selected option: 3
+
+2024-09-16 21:21:03 [main] INFO  service.MenuService - Student max enrolled to math
+
+2024-09-16 21:21:03 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:21:15 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:21:17 [main] INFO  service.MenuService - User selected option: 1
+
+2024-09-16 21:21:19 [main] INFO  service.MenuService - Student created: ssn='123', firstName='max', lastName='null', major='No major assigned'
+
+2024-09-16 21:21:19 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:21:20 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:21:21 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=math, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:21:21 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:21:22 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:21:23 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=chem, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:21:23 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:21:25 [main] INFO  service.MenuService - User selected option: 3
+
+2024-09-16 21:21:32 [main] INFO  service.MenuService - Student max enrolled to chem
+
+2024-09-16 21:21:32 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:21:56 [main] ERROR service.MenuService - Invalid option
+2024-09-16 21:21:56 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:22:00 [main] INFO  service.MenuService - User selected option: 3
+
+2024-09-16 21:22:23 [main] INFO  service.MenuService - Student max enrolled to math
+
+2024-09-16 21:22:23 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:33:09 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:33:10 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:33:12 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=math, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:33:12 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:33:12 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:33:16 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=chemistry, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:33:16 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:33:17 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:33:19 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=history, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:33:19 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:33:20 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:33:21 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=bla, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:33:21 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:33:22 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:33:24 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=blabla, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:33:24 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:33:26 [main] INFO  service.MenuService - User selected option: 5
+
+2024-09-16 21:33:26 [main] INFO  service.MenuService - Displayed available subjects.
+
+2024-09-16 21:33:26 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:38:02 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:38:05 [main] INFO  service.MenuService - User selected option: 2
+
+2024-09-16 21:38:07 [main] INFO  service.MenuService - Subject created: Subject(id=0, name=math, professor=null, students=null, shift=null, hoursPerWeek=0, exam=null, subjectCategory=null)
+
+2024-09-16 21:38:07 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:38:12 [main] INFO  service.MenuService - User selected option: 6
+
+2024-09-16 21:38:25 [main] INFO  service.MenuService - Exam set for subject: math
+
+2024-09-16 21:38:25 [main] INFO  service.MenuService - Displaying menu options.
+
+2024-09-16 21:38:40 [main] INFO  service.MenuService - User selected option: 0
+
+2024-09-16 21:38:40 [main] INFO  service.MenuService - System shutting down.
+

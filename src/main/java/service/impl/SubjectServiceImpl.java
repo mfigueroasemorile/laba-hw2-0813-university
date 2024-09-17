@@ -22,21 +22,24 @@ public final class SubjectServiceImpl implements ISubjectService {
 
     @Override
     public Subject searchSubjectByName(String subjectName, List<Subject> subjectsList){
-        for (Subject subject : subjectsList) {
-            if (subject.getName().equalsIgnoreCase(subjectName)) {
-                return subject;
-            }
+        if(subjectsList != null){
+             return subjectsList.stream()
+                    .filter(subject -> subject.getName().equalsIgnoreCase(subjectName))
+                    .findFirst()
+                    .orElse(null);
+        } else {
+            return null;
         }
-        return null;
     }
 
     @Override
     public void displaySubjectList(List<Subject> subjectList){
         if(!subjectList.isEmpty()){
             System.out.println("-------------Available subjects-------------");
-            for (Subject subject : subjectList){
-                System.out.println(subject.getName());
-            }
+
+            subjectList.stream()
+                    .map(Subject::getName)
+                    .forEach(System.out::println);
         } else {
             System.out.println("There isn't any subject available");
         }
@@ -45,11 +48,11 @@ public final class SubjectServiceImpl implements ISubjectService {
 
     @Override
     public List<Subject> createExam (Exam exam, List<Subject> subjectList, String subject){
-        for (Subject s : subjectList) {
-            if (s.getName().equalsIgnoreCase(subject)) {
-                s.setExam(exam);
-            }
-        }
+
+        subjectList.stream()
+                .filter(subj -> subj.getName().equalsIgnoreCase(subject))
+                .findFirst()
+                .ifPresent(subj-> subj.setExam(exam));
         return subjectList;
     }
 
