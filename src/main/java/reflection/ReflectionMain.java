@@ -9,6 +9,7 @@ public class ReflectionMain {
     public static void main(String[] args) throws Exception {
 
         Class <?> studentClass = Class.forName("model.Student");
+
         ReflectionService reflectionService = new ReflectionService();
         reflectionService.getFields(studentClass);
         reflectionService.getConstructor(studentClass);

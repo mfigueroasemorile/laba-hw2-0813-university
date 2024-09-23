@@ -2,6 +2,7 @@ package service.impl;
 
 import exception.StudentBookListEmptyException;
 import exception.StudentNotEnrolledException;
+import lambda.Assigner;
 import model.Book;
 import model.Student;
 import model.Subject;
@@ -30,7 +31,8 @@ public final class StudentServiceImpl implements IStudentService {
 
     @Override
     public void enrollStudentToSubject (Student student, Subject subject){
-        student.enrollToSubject(subject);
+        Assigner<Student, Subject> subjectAssigner = (std, subj) -> std.enrollToSubject(subj);
+        subjectAssigner.assign(student, subject);
     }
 
     @Override
@@ -79,5 +81,16 @@ public final class StudentServiceImpl implements IStudentService {
             };
         students.forEach(displayStudentInfo);
 
+    }
+
+    @Override
+    public void assignBookToStudent(Book book, Student student){
+        Assigner<Book, Student> bookAssigner = (b, s) -> {
+            List<Book> bookList = s.getBookList();
+            bookList.add(b);
+            s.setBookList(bookList);
+            System.out.println("Book " + b.getTitle() + " assigned to " + s.getFirstName());
+        };
+        bookAssigner.assign(book, student);
     }
 }

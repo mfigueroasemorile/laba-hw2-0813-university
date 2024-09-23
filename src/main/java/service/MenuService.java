@@ -3,6 +3,7 @@ package service;
 import exception.*;
 import generic.People;
 import generic.PeopleLinkedList;
+import lambda.Filter;
 import model.*;
 import service.impl.BookServiceImpl;
 import service.impl.StudentServiceImpl;
@@ -101,13 +102,21 @@ public class MenuService {
                             System.out.println("Subject not found");
                             throw new InvalidSubjectException("Subject doesn't exists");
                         }
-                        //Implementation of BiConsumer to enrroll student to subject:
-                        BiConsumer<Student,Subject> enrollStudent = (st, sj) ->selectedStudent.enrollToSubject(selectedSubject);
-                        enrollStudent.accept(selectedStudent,selectedSubject);
-//                        studentService.enrollStudentToSubject(selectedStudent, selectedSubject);
 
-                        System.out.println("Student " + selectedStudent.getFirstName() + " was successfully enrolled to " + selectedSubject.getName());
-                        LOGGER.info("Student " + selectedStudent.getFirstName() + " enrolled to " + selectedSubject.getName() + "\n");
+                        Filter<Student> enrolledInSubject = st -> st.getCurrentsSubjects().stream()
+                                .anyMatch(sub -> sub.getName().equalsIgnoreCase(selectedSubject.getName()));
+                        if (enrolledInSubject.apply(selectedStudent)) {
+                            System.out.println("student is already enrolled in this subject");
+                            LOGGER.error("Attempted to enroll student " + selectedStudent.getFirstName() + " in a subject that is already enrolled in: " + selectedSubject.getName());
+                            break;
+                        } else {
+                            //Implementation of BiConsumer to enrroll student to subject:
+
+                            BiConsumer<Student,Subject> enrollStudent = (st, sj) ->selectedStudent.enrollToSubject(selectedSubject);
+                            enrollStudent.accept(selectedStudent,selectedSubject);
+                            System.out.println("Student " + selectedStudent.getFirstName() + " was successfully enrolled to " + selectedSubject.getName());
+                            LOGGER.info("Student " + selectedStudent.getFirstName() + " enrolled to " + selectedSubject.getName() + "\n");
+                        }
                         break;
                     case DISPLAY_SUBJECT_STUDENT:
                         System.out.println("Insert student name: ");

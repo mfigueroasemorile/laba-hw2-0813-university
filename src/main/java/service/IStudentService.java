@@ -2,6 +2,7 @@ package service;
 
 import exception.StudentBookListEmptyException;
 import exception.StudentNotEnrolledException;
+import model.Book;
 import model.Student;
 import model.Subject;
 
@@ -15,4 +16,5 @@ public interface IStudentService {
     void displayStudentSubject(Student student) throws StudentNotEnrolledException;
     void displayStudentBookList(Student s) throws StudentBookListEmptyException;
     void displayStudents (Set<Student> students);
+    void assignBookToStudent(Book book, Student student);
 }
